@@ -1,25 +1,32 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-kwb.default
-===========
 
-This package provides functions that allow you to change the default behaviour of your user defined functions.
-
-Installation
-------------
-
-``` r
-devtools::install_github("kwb-r/kwb.default")
-#> Skipping install of 'kwb.default' from a github remote, the SHA1 (5acff8f8) has not changed since last install.
-#>   Use `force = TRUE` to force installation
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
 ```
 
-Usage
------
+# kwb.default
+
+This package provides functions that allow you to change the default behaviour of your user defined functions. 
+
+## Installation
+
+```{r}
+devtools::install_github("kwb-r/kwb.default")
+```
+
+## Usage
 
 First of all, you need to load the package:
 
-``` r
+```{r}
 library(kwb.default)
 ```
 
@@ -27,7 +34,7 @@ library(kwb.default)
 
 Instead of setting constant values in your function's definition, you can use calls to `getDefault()` that look up the current default values for the function's arguments when you call the function without these arguments being set. So, instead of defining a function `hello1()` with constant default values `"Mona"` and `"Lisa"` for the formal arguments `firstName` and `lastName`, respectively:
 
-``` r
+```{r}
 hello1 <- function
 (
   firstName = "Mona", 
@@ -40,7 +47,7 @@ hello1 <- function
 
 you define the function by assigning calls to `getDefault()` as default values, like this:
 
-``` r
+```{r}
 hello2 <- function
 (
   firstName = getDefault("hello2", "firstName"),
@@ -53,35 +60,32 @@ hello2 <- function
 
 You then set the default values separately with `setDefault()`:
 
-``` r
+```{r}
 setDefault("hello2", firstName = "Mona", lastName = "Lisa")
 ```
 
 Both functions now behave in the same way:
 
-``` r
+```{r}
 hello1()
-#> Hello Mona Lisa!
 hello2()
-#> Hello Mona Lisa!
 ```
 
 However, for `hello2()` we can easily change the default values without having to update the function's definition, just by calling `setDefault()` again:
 
-``` r
+```{r}
 setDefault("hello2", firstName = "Don", lastName = "Quichote")
 ```
 
 If you call the function now without arguments, the new defaults are used:
 
-``` r
+```{r}
 hello2()
-#> Hello Don Quichote!
 ```
 
 Note that `setDefault()` will raise an error if the function specified does not exist
 
-``` r
+```{r, eval = FALSE}
 setDefault("hello", firstName = "Peter")
 ```
 
@@ -89,9 +93,7 @@ setDefault("hello", firstName = "Peter")
 
 To read the current settings of default values, use `getDefault()`:
 
-``` r
+```{r}
 getDefault("hello2", "firstName")
-#> [1] "Don"
 getDefault("hello2", "lastName")
-#> [1] "Quichote"
 ```
