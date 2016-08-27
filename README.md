@@ -57,7 +57,7 @@ hello1()
 hello2()
 ```
 
-However, for `hello2` we can easily change the default values without having to update the function's definition, just by calling `setDefault()` again:
+However, for `hello2()` we can easily change the default values without having to update the function's definition, just by calling `setDefault()` again:
 
 ```{r}
 setDefault("hello2", firstName = "Don", lastName = "Quichote")
