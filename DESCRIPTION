@@ -1,0 +1,11 @@
+Package: kwb.default
+Type: Package
+Title: Get and Set Function Argument Defaults
+Version: 0.1.0
+Author: Hauke Sonnenberg
+Maintainer: Hauke Sonnenberg <hauke.sonnenberg@kompetenz-wasser.de>
+Description: Functions to get and set default values for the formal arguments
+  of user defined functions.
+License: GPL
+LazyData: TRUE
+RoxygenNote: 5.0.1
