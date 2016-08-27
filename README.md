@@ -1,5 +1,7 @@
 # kwb.default
 
+This package provides functions that allow you to change the default behaviour of your user defined functions. 
+
 ## Installation
 
 ```{r}
@@ -8,17 +10,76 @@ devtools::install_github("kwb-r/kwb.default")
 
 ## Usage
 
+First of all, you need to load the package:
+
 ```{r}
 library(kwb.default)
+```
 
-# Once you have defined a function...
-hello <- function(firstName = getDefault("hello", "firstName")) {
-  cat("Hello", firstName, "\n")
+### Setting default values
+
+Instead of setting constant values in your function's definition, you can use calls to `getDefault()` that look up the current default values for the function's arguments when you call the function without these arguments being set. So, instead of defining a function `hello1()` with constant default values `"Mona"` and `"Lisa"` for the formal arguments `firstName` and `lastName`, respectively:
+
+```{r}
+hello1 <- function
+(
+  firstName = "Mona", 
+  lastName = "Lisa"
+) 
+{
+  cat(paste0("Hello ", firstName, " ", lastName, "!\n"))
 }
+```
 
-# ... you can define the default value for its arguments...
+you define the function by assigning calls to `getDefault()` as default values, like this:
+
+```{r}
+hello2 <- function
+(
+  firstName = getDefault("hello", "firstName"),
+  lastName = getDefault("hello", "lastName")
+) 
+{
+  cat(paste0("Hello ", firstName, " ", lastName, "!\n"))
+}
+```
+
+You then set the default values separately with `setDefault()`:
+
+```{r}
+setDefault("hello2", firstName = "Mona", lastName = "Lisa")
+```
+
+Both functions now behave in the same way:
+
+```{r}
+hello1()
+hello2()
+```
+
+However, for `hello2` we can easily change the default values without having to update the function's definition, just by calling `setDefault()`:
+
+```{r}
+setDefault("hello2", firstName = "Don", lastName = "Quichote")
+```
+
+If you call the function now without arguments, the new defaults are used:
+
+```{r}
+hello2()
+```
+
+Note that `setDefault()` will raise an error if the function specified does not exist
+
+```{r}
 setDefault("hello", firstName = "Peter")
+```
 
-# ... and read it back with getDefault()...
+### Getting default values
+
+To read the current settings of default values, use `getDefault()`:
+
+```{r}
 getDefault("hello", "firstName")
+getDefault("hello", "lastName")
 ```
