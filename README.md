@@ -36,8 +36,8 @@ you define the function by assigning calls to `getDefault()` as default values, 
 ```{r}
 hello2 <- function
 (
-  firstName = getDefault("hello", "firstName"),
-  lastName = getDefault("hello", "lastName")
+  firstName = getDefault("hello2", "firstName"),
+  lastName = getDefault("hello2", "lastName")
 ) 
 {
   cat(paste0("Hello ", firstName, " ", lastName, "!\n"))
@@ -57,7 +57,7 @@ hello1()
 hello2()
 ```
 
-However, for `hello2` we can easily change the default values without having to update the function's definition, just by calling `setDefault()`:
+However, for `hello2` we can easily change the default values without having to update the function's definition, just by calling `setDefault()` again:
 
 ```{r}
 setDefault("hello2", firstName = "Don", lastName = "Quichote")
@@ -80,6 +80,6 @@ setDefault("hello", firstName = "Peter")
 To read the current settings of default values, use `getDefault()`:
 
 ```{r}
-getDefault("hello", "firstName")
-getDefault("hello", "lastName")
+getDefault("hello2", "firstName")
+getDefault("hello2", "lastName")
 ```
