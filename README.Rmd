@@ -18,7 +18,10 @@ This package provides functions that allow you to change the default behaviour o
 
 ## Installation
 
-```{r}
+You can install the latest development version of the package `kwb.default` from github with
+
+```R
+# install.packages("devtools")
 devtools::install_github("kwb-r/kwb.default")
 ```
 
@@ -85,8 +88,8 @@ hello2()
 
 Note that `setDefault()` will raise an error if the function specified does not exist
 
-```{r, eval = FALSE}
-setDefault("hello", firstName = "Peter")
+```{r, error = TRUE}
+tryCatch(setDefault("hello", firstName = "Peter"))
 ```
 
 ### Getting default values

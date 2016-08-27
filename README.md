@@ -8,10 +8,11 @@ This package provides functions that allow you to change the default behaviour o
 Installation
 ------------
 
+You can install the latest development version of the package `kwb.default` from github with
+
 ``` r
+# install.packages("devtools")
 devtools::install_github("kwb-r/kwb.default")
-#> Skipping install of 'kwb.default' from a github remote, the SHA1 (5acff8f8) has not changed since last install.
-#>   Use `force = TRUE` to force installation
 ```
 
 Usage
@@ -82,7 +83,8 @@ hello2()
 Note that `setDefault()` will raise an error if the function specified does not exist
 
 ``` r
-setDefault("hello", firstName = "Peter")
+tryCatch(setDefault("hello", firstName = "Peter"))
+#> Error: 'hello' does not seem to be a function!
 ```
 
 ### Getting default values

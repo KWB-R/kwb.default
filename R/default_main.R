@@ -118,7 +118,7 @@ getArgumentNames <- function(funName)
 stopIfNoSuchFunction <- function(funName)
 {
   if (! functionAvailable(funName)) {
-    stop("'", funName, "' does not seem to be a function!")
+    stop("'", funName, "' does not seem to be a function!", call. = FALSE)
   }
 }
 
