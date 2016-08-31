@@ -5,6 +5,8 @@ kwb.default
 
 This package provides functions that allow you to change the default behaviour of your user defined functions.
 
+[![Build Status](https://travis-ci.org/KWB-R/kwb.default.svg?branch=master)](https://travis-ci.org/KWB-R/kwb.default)
+
 Installation
 ------------
 
