@@ -6,6 +6,6 @@ Author: Hauke Sonnenberg
 Maintainer: Hauke Sonnenberg <hauke.sonnenberg@kompetenz-wasser.de>
 Description: Functions to get and set default values for the formal arguments
   of user defined functions.
-License: GPL
+License: GPL | file LICENSE
 LazyData: TRUE
 RoxygenNote: 5.0.1
