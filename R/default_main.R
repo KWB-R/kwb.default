@@ -3,6 +3,11 @@
 #'
 #' @param funName Name of the function
 #' @param argName Name of the formal argument
+#' @param default Default value to use if no default value is stored for
+#'   argument \code{argName} of function \code{funName}
+#' @param warn if \code{TRUE} (default) a message is given if no defaults are
+#'   defined for the given function or argument and if \code{default} is
+#'   returned instead.
 #' @return default value that is defined for the formal argument \code{argName}
 #'   of the user-defined function \code{funName}
 #' @seealso \code{\link{setDefault}}
@@ -18,7 +23,7 @@
 #'
 #' # ... and read it back with getDefault()...
 #' getDefault("hello", "firstName")
-getDefault <- function(funName, argName)
+getDefault <- function(funName, argName, default = NULL, warn = TRUE)
 {
   defaults <- getDefaults()
 
@@ -31,10 +36,14 @@ getDefault <- function(funName, argName)
 
     if (! functionAvailable(funName)) {
       errorMessage <- paste0(errorMessage, " Also, '", funName,
-                             "' does not seem to be a function!")
+                             "' does not seem to be a function! ")
     }
 
-    stop(errorMessage)
+    if (warn) {
+      message(errorMessage, "Returning the default value: ", default)
+    }
+
+    return(default)
   }
 
   funDefaults <- defaults[[funName]]
@@ -53,7 +62,11 @@ getDefault <- function(funName, argName)
       )
     }
 
-    stop(errorMessage)
+    if (warn) {
+      message(errorMessage, "Returning the default value: ", default)
+    }
+
+    return(default)
   }
 
   funDefaults[[argName]]

@@ -4,12 +4,19 @@
 \alias{getDefault}
 \title{Get the default value that is defined for a function's argument}
 \usage{
-getDefault(funName, argName)
+getDefault(funName, argName, default = NULL, warn = TRUE)
 }
 \arguments{
 \item{funName}{Name of the function}
 
 \item{argName}{Name of the formal argument}
+
+\item{default}{Default value to use if no default value is stored for
+argument \code{argName} of function \code{funName}}
+
+\item{warn}{if \code{TRUE} (default) a message is given if no defaults are
+defined for the given function or argument and if \code{default} is
+returned instead.}
 }
 \value{
 default value that is defined for the formal argument \code{argName}
@@ -33,4 +40,3 @@ getDefault("hello", "firstName")
 \seealso{
 \code{\link{setDefault}}
 }
-

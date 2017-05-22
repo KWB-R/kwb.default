@@ -44,4 +44,3 @@ hello()
 \seealso{
 \code{\link{getDefault}}
 }
-
