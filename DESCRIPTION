@@ -8,6 +8,6 @@ Description: Functions to get and set default values for the formal arguments
   of user defined functions.
 License: GPL | file LICENSE
 LazyData: TRUE
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 VignetteBuilder: knitr
 Suggests: knitr, rmarkdown
