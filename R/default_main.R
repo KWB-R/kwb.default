@@ -85,9 +85,11 @@ getDefaults <- function(name = .defaultName(), init.if.missing = TRUE)
   if (! name %in% names(options())) {
 
     if (init.if.missing) {
+
       setDefaults(list(), name = name)
-    }
-    else {
+
+    } else {
+
       stop("No option '", name, "' available! Use setDefaults() first!")
     }
   }
@@ -116,7 +118,22 @@ setDefaults <- function(defaults = list(), name = .defaultName())
 # functionAvailable ------------------------------------------------------------
 functionAvailable <- function(funName)
 {
-  ! inherits(try(args <- formals(funName), silent = TRUE), "try-error")
+  ! inherits(try(.getFunction(funName)), "try-error")
+}
+
+# .getFunction -----------------------------------------------------------------
+.getFunction <- function(x)
+{
+  parts <- strsplit(x, "::")[[1]]
+
+  if (length(parts) > 1) {
+
+    get(parts[2], envir = asNamespace(parts[1]))
+
+  } else {
+
+    get(parts[1])
+  }
 }
 
 # getArgumentNames -------------------------------------------------------------
@@ -124,7 +141,7 @@ getArgumentNames <- function(funName)
 {
   stopIfNoSuchFunction(funName)
 
-  names(formals(funName))
+  names(formals(.getFunction(funName)))
 }
 
 # stopIfNoSuchFunction ---------------------------------------------------------
@@ -204,8 +221,11 @@ stopIfNoSuchArgument <- function(funName, argName)
   argNames <- getArgumentNames(funName)
 
   if (! argName %in% argNames) {
-    stop("'", funName, "' does not have a formal argument called '",
-         argName, "'! Available formal arguments: ",
-         paste0("'", argNames, "'", collapse = ", "))
+    stop(
+      "'", funName, "' does not have a formal argument called '",
+      argName, "'! Available formal arguments: ",
+      paste0("'", argNames, "'", collapse = ", "),
+      call. = FALSE
+    )
   }
 }
