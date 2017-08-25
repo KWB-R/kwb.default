@@ -40,7 +40,7 @@ getDefault <- function(funName, argName, default = NULL, warn = TRUE)
     }
 
     if (warn) {
-      message(errorMessage, "Returning the default value: ", default)
+      message(errorMessage, " Returning the default value: ", default)
     }
 
     return(default)
