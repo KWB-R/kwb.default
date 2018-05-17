@@ -1,9 +1,9 @@
 Package: kwb.default
 Type: Package
 Title: Get and Set Function Argument Defaults
-Version: 0.1.0
-Author: Hauke Sonnenberg
-Maintainer: Hauke Sonnenberg <hauke.sonnenberg@kompetenz-wasser.de>
+Version: 0.1.0.9000
+Authors@R: c(person("Hauke", "Sonnenberg", , "hauke.sonnenberg@kompetenz-wasser.de", role = c("aut", "cre")),
+             person("Kompetenzzentrum Wasser Berlin gGmbH", role = c("cph")))
 Description: Functions to get and set default values for the formal arguments
   of user defined functions.
 License: GPL | file LICENSE
@@ -11,3 +11,5 @@ LazyData: TRUE
 RoxygenNote: 6.0.1
 VignetteBuilder: knitr
 Suggests: knitr, rmarkdown
+URL: https://github.com/kwb-r/kwb.default
+BugReports: https://github.com/kwb-r/kwb.default/issues

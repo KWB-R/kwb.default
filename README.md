@@ -1,101 +1,15 @@
+# kwb.default
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-kwb.default
-===========
+[![Appveyor build status](https://ci.appveyor.com/api/projects/status/pk7m26j938y55j84/branch/master?svg=true)](https://ci.appveyor.com/project/KWB-R/kwb-default/branch/master)
+[![Build Status](https://travis-ci.org/KWB-R/kwb.default.svg?branch=master)](https://travis-ci.org/KWB-R/kwb.default)
+[![codecov](https://codecov.io/github/KWB-R/kwb.default/branch/master/graphs/badge.svg)](https://codecov.io/github/KWB-R/kwb.default)
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/kwb.default)](http://cran.r-project.org/package=kwb.default)
 
 This package provides functions that allow you to change the default behaviour of your user defined functions.
 
-[![Build Status](https://travis-ci.org/KWB-R/kwb.default.svg?branch=master)](https://travis-ci.org/KWB-R/kwb.default)
 
-Installation
-------------
+## Documentation
 
-You can install the latest development version of the package `kwb.default` from github with
-
-``` r
-# install.packages("devtools")
-devtools::install_github("kwb-r/kwb.default")
-```
-
-Usage
------
-
-First of all, you need to load the package:
-
-``` r
-library(kwb.default)
-```
-
-### Setting default values
-
-Instead of setting constant values in your function's definition, you can use calls to `getDefault()` that look up the current default values for the function's arguments when you call the function without these arguments being set. So, instead of defining a function `hello1()` with constant default values `"Mona"` and `"Lisa"` for the formal arguments `firstName` and `lastName`, respectively:
-
-``` r
-hello1 <- function
-(
-  firstName = "Mona", 
-  lastName = "Lisa"
-) 
-{
-  cat(paste0("Hello ", firstName, " ", lastName, "!\n"))
-}
-```
-
-you define the function by assigning calls to `getDefault()` as default values, like this:
-
-``` r
-hello2 <- function
-(
-  firstName = getDefault("hello2", "firstName"),
-  lastName = getDefault("hello2", "lastName")
-) 
-{
-  cat(paste0("Hello ", firstName, " ", lastName, "!\n"))
-}
-```
-
-You then set the default values separately with `setDefault()`:
-
-``` r
-setDefault("hello2", firstName = "Mona", lastName = "Lisa")
-```
-
-Both functions now behave in the same way:
-
-``` r
-hello1()
-#> Hello Mona Lisa!
-hello2()
-#> Hello Mona Lisa!
-```
-
-However, for `hello2()` we can easily change the default values without having to update the function's definition, just by calling `setDefault()` again:
-
-``` r
-setDefault("hello2", firstName = "Don", lastName = "Quichote")
-```
-
-If you call the function now without arguments, the new defaults are used:
-
-``` r
-hello2()
-#> Hello Don Quichote!
-```
-
-Note that `setDefault()` will raise an error if the function specified does not exist
-
-``` r
-tryCatch(setDefault("hello", firstName = "Peter"))
-#> Error: 'hello' does not seem to be a function!
-```
-
-### Getting default values
-
-To read the current settings of default values, use `getDefault()`:
-
-``` r
-getDefault("hello2", "firstName")
-#> [1] "Don"
-getDefault("hello2", "lastName")
-#> [1] "Quichote"
-```
+Development version: [https://kwb-r.github.io/kwb.default/dev](https://kwb-r.github.io/kwb.default/dev)
+Latest release: [https://kwb-r.github.io/kwb.default](https://kwb-r.github.io/kwb.default)
