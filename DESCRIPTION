@@ -4,7 +4,7 @@ Title: Get and Set Function Argument Defaults
 Version: 0.1.0.9000
 Authors@R: c(
     person("Hauke", "Sonnenberg", , "hauke.sonnenberg@kompetenz-wasser.de", 
-           role = c("aut", "cre"), comment = c(ORCID = "0000-0003-0647-7726")),
+           role = c("aut", "cre"), comment = c(ORCID = "0000-0001-9134-2871")),
     person("Kompetenzzentrum Wasser Berlin gGmbH", role = c("cph")))
 Description: Functions to get and set default values for the formal arguments
   of user defined functions.
