@@ -25,10 +25,7 @@ if (! require("remotes")) {
   install.packages("remotes", repos = "https://cloud.r-project.org")
 }
 
-### Temporary workaround on Windows to fix bug in CRAN version v2.0.2
-### of "remotes" (see https://github.com/r-lib/remotes/issues/248)
-
-remotes::install_github("r-lib/remotes@18c7302637053faf21c5b025e1e9243962db1bdc")
+# Install KWB package 'kwb.default' from GitHub
 remotes::install_github("KWB-R/kwb.default")
 ```
 

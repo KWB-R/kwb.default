@@ -2,7 +2,7 @@
 ^\.Rproj\.user$
 ^\.travis\.yml$
 ^README\.md$
-^index\.Rmd$
+^index\.md$
 ^.gitlab-ci\.yml$
 ^.travis\.yml$
 ^_pkgdown\.yaml$
