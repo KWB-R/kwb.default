@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tutorial for R package kwb.default • kwb.default</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><!-- docsearch --><script src="../docsearch.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous">
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script><meta property="og:title" content="Tutorial for R package kwb.default">
@@ -40,7 +41,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -63,12 +64,12 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/kwb-r/kwb.default">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul>
-<form class="navbar-form navbar-right" role="search">
+<form class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
         <div class="form-group">
           <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
 </div>
@@ -82,13 +83,14 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Tutorial for R package kwb.default</h1>
                         <h4 class="author">Hauke Sonnenberg Kompetenzzentrum Wasser Berlin gGmbH)</h4>
             
-            <h4 class="date">March 24, 2019</h4>
+            <h4 class="date">September 09, 2019</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/kwb-r/kwb.default/blob/master/vignettes/Tutorial.Rmd"><code>vignettes/Tutorial.Rmd</code></a></small>
       <div class="hidden name"><code>Tutorial.Rmd</code></div>
@@ -106,13 +108,13 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the latest development version of the package <code>kwb.default</code> from github with</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"kwb-r/kwb.default"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"kwb-r/kwb.default"</span>)</a></code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>First of all, you need to load the package:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(kwb.default)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(kwb.default)</a></code></pre></div>
 <div id="setting-default-values" class="section level3">
 <h3 class="hasAnchor">
 <a href="#setting-default-values" class="anchor"></a>Setting default values</h3>
@@ -123,7 +125,7 @@
 <a class="sourceLine" id="cb3-4" data-line-number="4">  <span class="dt">lastName =</span> <span class="st">"Lisa"</span></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5">) </a>
 <a class="sourceLine" id="cb3-6" data-line-number="6">{</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7">  <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/cat">cat</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/paste">paste0</a></span>(<span class="st">"Hello "</span>, firstName, <span class="st">" "</span>, lastName, <span class="st">"!</span><span class="ch">\n</span><span class="st">"</span>))</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">  <span class="kw"><a href="https://rdrr.io/r/base/cat.html">cat</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="st">"Hello "</span>, firstName, <span class="st">" "</span>, lastName, <span class="st">"!</span><span class="ch">\n</span><span class="st">"</span>))</a>
 <a class="sourceLine" id="cb3-8" data-line-number="8">}</a></code></pre></div>
 <p>you define the function by assigning calls to <code><a href="../reference/getDefault.html">getDefault()</a></code> as default values, like this:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">hello2 &lt;-<span class="st"> </span><span class="cf">function</span></a>
@@ -132,7 +134,7 @@
 <a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="dt">lastName =</span> <span class="kw"><a href="../reference/getDefault.html">getDefault</a></span>(<span class="st">"hello2"</span>, <span class="st">"lastName"</span>)</a>
 <a class="sourceLine" id="cb4-5" data-line-number="5">) </a>
 <a class="sourceLine" id="cb4-6" data-line-number="6">{</a>
-<a class="sourceLine" id="cb4-7" data-line-number="7">  <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/cat">cat</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/paste">paste0</a></span>(<span class="st">"Hello "</span>, firstName, <span class="st">" "</span>, lastName, <span class="st">"!</span><span class="ch">\n</span><span class="st">"</span>))</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">  <span class="kw"><a href="https://rdrr.io/r/base/cat.html">cat</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="st">"Hello "</span>, firstName, <span class="st">" "</span>, lastName, <span class="st">"!</span><span class="ch">\n</span><span class="st">"</span>))</a>
 <a class="sourceLine" id="cb4-8" data-line-number="8">}</a></code></pre></div>
 <p>You then set the default values separately with <code><a href="../reference/setDefault.html">setDefault()</a></code>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="../reference/setDefault.html">setDefault</a></span>(<span class="st">"hello2"</span>, <span class="dt">firstName =</span> <span class="st">"Mona"</span>, <span class="dt">lastName =</span> <span class="st">"Lisa"</span>)</a></code></pre></div>
@@ -147,7 +149,7 @@
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">hello2</span>()</a></code></pre></div>
 <pre><code>## Hello Don Quichote!</code></pre>
 <p>Note that <code><a href="../reference/setDefault.html">setDefault()</a></code> will raise an error if the function specified does not exist</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/conditions">tryCatch</a></span>(<span class="kw"><a href="../reference/setDefault.html">setDefault</a></span>(<span class="st">"hello"</span>, <span class="dt">firstName =</span> <span class="st">"Peter"</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/conditions.html">tryCatch</a></span>(<span class="kw"><a href="../reference/setDefault.html">setDefault</a></span>(<span class="st">"hello"</span>, <span class="dt">firstName =</span> <span class="st">"Peter"</span>))</a></code></pre></div>
 <pre><code>## Error in get(parts[1]) : object 'hello' not found</code></pre>
 <pre><code>## Error: 'hello' does not seem to be a function!</code></pre>
 </div>
@@ -165,6 +167,7 @@
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+
         <div id="tocnav">
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
@@ -182,13 +185,15 @@
 </div>
 
 
+
       <footer><div class="copyright">
   <p>Developed by <a href="https://github.com/hsonne">Hauke Sonnenberg</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
 </div>
+
       </footer>
 </div>
 
