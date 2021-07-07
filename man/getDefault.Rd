@@ -28,7 +28,7 @@ Get the default value that is defined for a function's argument
 \examples{
 # Once you have defined a function...
 hello <- function(firstName = getDefault("hello", "firstName")) {
-  cat("Hello", firstName, "\\n")
+  cat("Hello", firstName, "\n")
 }
 
 # ... you can define the default value for its arguments...

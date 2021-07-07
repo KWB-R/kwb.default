@@ -26,7 +26,7 @@ hello <- function(
   lastName = getDefault("hello", "lastName")
 )
 {
-  cat(paste0("Hello ", firstName, " ", lastName, "!\\n") )
+  cat(paste0("Hello ", firstName, " ", lastName, "!\n") )
 }
 
 # Now you can define the argument defaults

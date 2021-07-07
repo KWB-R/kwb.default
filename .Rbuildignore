@@ -10,3 +10,4 @@
 ^codecov\.yml$
 ^docs$
 ^LICENSE\.md$
+^\.github$
