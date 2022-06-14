@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://kwb-r.github.io/kwb.default/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://kwb-r.github.io/kwb.default/articles/index.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://kwb-r.github.io/kwb.default/articles/Tutorial.html</loc>
   </url>
   <url>
-    <loc>/articles/Tutorial.html</loc>
+    <loc>https://kwb-r.github.io/kwb.default/authors.html</loc>
   </url>
   <url>
-    <loc>/articles/index.html</loc>
+    <loc>https://kwb-r.github.io/kwb.default/index.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://kwb-r.github.io/kwb.default/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://kwb-r.github.io/kwb.default/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/reference/getDefault.html</loc>
+    <loc>https://kwb-r.github.io/kwb.default/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://kwb-r.github.io/kwb.default/reference/getDefault.html</loc>
   </url>
   <url>
-    <loc>/reference/setDefault.html</loc>
+    <loc>https://kwb-r.github.io/kwb.default/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://kwb-r.github.io/kwb.default/reference/setDefault.html</loc>
   </url>
 </urlset>
