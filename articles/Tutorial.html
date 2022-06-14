@@ -21,6 +21,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -40,16 +42,10 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -63,7 +59,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/kwb-r/kwb.default/">
+  <a href="https://github.com/kwb-r/kwb.default/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -88,38 +84,38 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Tutorial for R package kwb.default</h1>
-                        <h4 class="author">Hauke Sonnenberg Kompetenzzentrum Wasser Berlin gGmbH)</h4>
+                        <h4 data-toc-skip class="author">Hauke Sonnenberg Kompetenzzentrum Wasser Berlin gGmbH)</h4>
             
-            <h4 class="date">July 07, 2021</h4>
+            <h4 data-toc-skip class="date">June 14, 2022</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/kwb-r/kwb.default/blob/master/vignettes/Tutorial.Rmd"><code>vignettes/Tutorial.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/kwb-r/kwb.default/blob/HEAD/vignettes/Tutorial.Rmd" class="external-link"><code>vignettes/Tutorial.Rmd</code></a></small>
       <div class="hidden name"><code>Tutorial.Rmd</code></div>
 
     </div>
 
     
     
-<div id="kwb-default" class="section level1">
-<h1 class="hasAnchor">
-<a href="#kwb-default" class="anchor"></a>kwb.default</h1>
+<div class="section level2">
+<h2 id="kwb-default">kwb.default<a class="anchor" aria-label="anchor" href="#kwb-default"></a>
+</h2>
 <p>This package provides functions that allow you to change the default behaviour of your user defined functions.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level3">
+<h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h3>
 <p>You can install the latest development version of the package <code>kwb.default</code> from github with</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"kwb-r/kwb.default"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="usage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
+<div class="section level3">
+<h3 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h3>
 <p>First of all, you need to load the package:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kwb-r/kwb.default">kwb.default</a></span><span class="op">)</span></code></pre></div>
-<div id="setting-default-values" class="section level3">
-<h3 class="hasAnchor">
-<a href="#setting-default-values" class="anchor"></a>Setting default values</h3>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kwb-r/kwb.default" class="external-link">kwb.default</a></span><span class="op">)</span></code></pre></div>
+<div class="section level4">
+<h4 id="setting-default-values">Setting default values<a class="anchor" aria-label="anchor" href="#setting-default-values"></a>
+</h4>
 <p>Instead of setting constant values in your function’s definition, you can use calls to <code><a href="../reference/getDefault.html">getDefault()</a></code> that look up the current default values for the function’s arguments when you call the function without these arguments being set. So, instead of defining a function <code>hello1()</code> with constant default values <code>"Mona"</code> and <code>"Lisa"</code> for the formal arguments <code>firstName</code> and <code>lastName</code>, respectively:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">hello1</span> <span class="op">&lt;-</span> <span class="kw">function</span>
@@ -128,7 +124,7 @@
   <span class="va">lastName</span> <span class="op">=</span> <span class="st">"Lisa"</span>
 <span class="op">)</span> 
 <span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"Hello "</span>, <span class="va">firstName</span>, <span class="st">" "</span>, <span class="va">lastName</span>, <span class="st">"!\n"</span><span class="op">)</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"Hello "</span>, <span class="va">firstName</span>, <span class="st">" "</span>, <span class="va">lastName</span>, <span class="st">"!\n"</span><span class="op">)</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
 <p>you define the function by assigning calls to <code><a href="../reference/getDefault.html">getDefault()</a></code> as default values, like this:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
@@ -138,7 +134,7 @@
   <span class="va">lastName</span> <span class="op">=</span> <span class="fu"><a href="../reference/getDefault.html">getDefault</a></span><span class="op">(</span><span class="st">"hello2"</span>, <span class="st">"lastName"</span><span class="op">)</span>
 <span class="op">)</span> 
 <span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"Hello "</span>, <span class="va">firstName</span>, <span class="st">" "</span>, <span class="va">lastName</span>, <span class="st">"!\n"</span><span class="op">)</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"Hello "</span>, <span class="va">firstName</span>, <span class="st">" "</span>, <span class="va">lastName</span>, <span class="st">"!\n"</span><span class="op">)</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
 <p>You then set the default values separately with <code><a href="../reference/setDefault.html">setDefault()</a></code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -146,33 +142,33 @@
 <p>Both functions now behave in the same way:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">hello1</span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>## Hello Mona Lisa!</code></pre>
+<pre><code><span class="co">## Hello Mona Lisa!</span></code></pre>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">hello2</span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>## Hello Mona Lisa!</code></pre>
+<pre><code><span class="co">## Hello Mona Lisa!</span></code></pre>
 <p>However, for <code>hello2()</code> we can easily change the default values without having to update the function’s definition, just by calling <code><a href="../reference/setDefault.html">setDefault()</a></code> again:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/setDefault.html">setDefault</a></span><span class="op">(</span><span class="st">"hello2"</span>, firstName <span class="op">=</span> <span class="st">"Don"</span>, lastName <span class="op">=</span> <span class="st">"Quichote"</span><span class="op">)</span></code></pre></div>
 <p>If you call the function now without arguments, the new defaults are used:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">hello2</span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>## Hello Don Quichote!</code></pre>
+<pre><code><span class="co">## Hello Don Quichote!</span></code></pre>
 <p>Note that <code><a href="../reference/setDefault.html">setDefault()</a></code> will raise an error if the function specified does not exist</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/conditions.html">tryCatch</a></span><span class="op">(</span><span class="fu"><a href="../reference/setDefault.html">setDefault</a></span><span class="op">(</span><span class="st">"hello"</span>, firstName <span class="op">=</span> <span class="st">"Peter"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## Error in get(parts[1]) : object 'hello' not found</code></pre>
-<pre><code>## Error: 'hello' does not seem to be a function!</code></pre>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/conditions.html" class="external-link">tryCatch</a></span><span class="op">(</span><span class="fu"><a href="../reference/setDefault.html">setDefault</a></span><span class="op">(</span><span class="st">"hello"</span>, firstName <span class="op">=</span> <span class="st">"Peter"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## Error in get(parts[1]) : object 'hello' not found</span></code></pre>
+<pre><code><span class="co">## Error: 'hello' does not seem to be a function!</span></code></pre>
 </div>
-<div id="getting-default-values" class="section level3">
-<h3 class="hasAnchor">
-<a href="#getting-default-values" class="anchor"></a>Getting default values</h3>
+<div class="section level4">
+<h4 id="getting-default-values">Getting default values<a class="anchor" aria-label="anchor" href="#getting-default-values"></a>
+</h4>
 <p>To read the current settings of default values, use <code><a href="../reference/getDefault.html">getDefault()</a></code>:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getDefault.html">getDefault</a></span><span class="op">(</span><span class="st">"hello2"</span>, <span class="st">"firstName"</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] "Don"</code></pre>
+<pre><code><span class="co">## [1] "Don"</span></code></pre>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getDefault.html">getDefault</a></span><span class="op">(</span><span class="st">"hello2"</span>, <span class="st">"lastName"</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] "Quichote"</code></pre>
+<pre><code><span class="co">## [1] "Quichote"</span></code></pre>
 </div>
 </div>
 </div>
@@ -189,11 +185,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://github.com/hsonne">Hauke Sonnenberg</a>.</p>
+  <p></p>
+<p>Developed by <a href="https://github.com/hsonne" class="external-link">Hauke Sonnenberg</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
       </footer>
